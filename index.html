@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy"
+          content="img-src 'self' data: filesystem:; default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; script-src-elem 'self' 'unsafe-eval' https://unpkg.com">
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+    <link href="./styles.css" rel="stylesheet">
+    <title>Hello World!</title>
+</head>
+<body>
+<div class="body-wrapper">
+    <div class="body-content">
+        <video id="stream" src="#" autoplay></video>
+        
+        <div class="button-wrapper">
+            <button id="start">Start</button>
+            <button id="stop" class="hidden">Stop</button>
+        </div>
+    </div>
+    
+    <div class="modal micromodal-slide" id="electron-screen-picker" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+                <header class="modal__header">
+                    <h2 class="modal__title" id="modal-1-title">
+                        Share your screen
+                    </h2>
+                    <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+                </header>
+                <main class="modal__content" id="modal-1-content">
+                    <div class="ibox __electron-screen-picker-content">
+                        <div class="ibox-content">
+                            <div data-settings class="__electron-screen-settings-notice hidden">
+                                <div>Please grant access to screen recording for this app in System Preferences and click
+                                    "Retry"
+                                </div>
+                                <div class="m-t-xs text-center">
+                                    <button data-retry type="button" class="btn btn-md btn-default">Retry</button>
+                                </div>
+                            </div>
+    
+                            <div id="sources" class="__electron-list"></div>
+                        </div>
+                    </div>
+                </main>
+                <footer class="modal__footer">
+                    <button id="system-preferences" class="modal__btn modal__btn-primary">Open system preferences</button>
+                    <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
+                </footer>
+            </div>
+        </div>
+    </div>
+    
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "edc",
+  "version": "1.0.0",
+  "description": "A minimal Desktop capturing Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "Electron",
+    "tutorial",
+    "demo",
+    "desktop capturing"
+  ],
+  "author": "Oleksandr Trukhnii",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^25.0.1"
+  },
+  "dependencies": {
+    "electron-util": "^0.17.2"
+  }
+}
