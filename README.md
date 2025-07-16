@@ -1,8 +1,8 @@
 # electron-desktop-capturing
 
-**A simple screen picker for Electron**
+**A simple screen picker for Electron desktop sharing**
 
-This is a minimal Electron application with screen picker.
+This is a minimal Electron application with a screen picker using `desktopCapturer.getSources()` for a screen sharing functionality.
 
 ```bash
 git clone https://github.com/JohnJunior/electron-desktop-capturing.git
